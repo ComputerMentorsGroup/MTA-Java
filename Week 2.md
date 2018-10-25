@@ -46,7 +46,7 @@ In the example above ```String name = "Avery";``` is a variable. To declare it w
 ## If statments
 
 An If statment is what is known as a conditional. It only runs if the condition that it is looking for is true. we can add an else statment after it to do do a task if the other condition is false.
-```
+```Java
 if(doorUnlocked == true){
     openDoor();
 } else {
@@ -57,10 +57,12 @@ if(doorUnlocked == true){
 ## Loops
 
 A loop is a type of conditional statment that does exactley what it sounds like. It repeats a block of code like song on repeat until the condition its looking for is false. to day we will use the Do loop.
-```
+```Java
 int x = 0;
+
 do{
-x = x + 1;
+    x = x + 1;
+    
 }while(x < 100);
 ```
 This loop will reapete as long as x is less than 100. The unique thing about do loops is that unlike other conditionals the do loop will run ATLEAST once.
@@ -69,7 +71,7 @@ This loop will reapete as long as x is less than 100. The unique thing about do 
 
 A method, also known as a function, is a block of code that preforms a task by combining differnt lins of code. Some methods will require the program to return a value. Others, like the main method at the top, will not return a value.
 
-```
+```Java
 public boolean checkAge(int i){
     boolean oldEnough = false;
     if(i > 13){
@@ -81,7 +83,7 @@ public boolean checkAge(int i){
 The example code is going to check to see if the data passed to it```int i``` is old enough. If they are old enough it will change the value of the oldEnough boolean to true and return that value to the code that called it.
 
 To call this method you would need write this:
-```
+```Java
 checkAge(19);
 ```
 
