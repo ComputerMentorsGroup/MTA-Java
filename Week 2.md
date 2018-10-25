@@ -13,7 +13,7 @@ public class Main {
 }
 ```
 ## Details
-This is what’s known as a Console Application. Let’s break this program down a lot. It looks like a lot of code, but all this program does is display the words "Hello World" in the console that shows up when you run this program. Any Java program will need to have a main method in order for the program to work. The main function will let the compiler know where the program is going to start.
+This is what’s known as a Console Application. Let’s break this program down a lot. It looks like a lot of code, but all this program does is display the words "Hello World" in the console that shows up when you run this program. Any Java program will need to have a main method in order for the program to work. The main function will let the compiler know where the program is going to start. Also pay attention to semicolons ```;```. They must be in place to end a line of code.
 
 Print is a function that displays text on the consloe for the user to see.
 ```Java
@@ -36,53 +36,53 @@ System.out.println("Hello %s", name); // This will display change %s to the valu
 
 ## Variables
 
-In programming, variables are used to hold values. The value of a variable can be a number or an object such as a String of text or something else that you define. Variable can be used for:
+In programming, variables are used to hold values in much the same way as they are used in math. The value of a variable can be a number or an object such as a String of text or something else that you define. Variable can be used for:
 * Organizing code
 * Storing user input
 * Managing the current state of the program (more details later)
 
-### Most Common Types
+In the example above ```String name = "Avery";``` is a variable. To declare it we must give it a type (in this case the type is a String). Then we must give it a name. The variables name will help us distinguish it form other variables. The ```=``` operator is used to asign a value to the variable. In the example the value is ```"Avery"```. Keep in muind that because the variable is expecting a string we MUST wrap or text in quotes. 
 
-* int - holds integer values (i.e. whole numbers)
-* float - holds floating point values (i.e. decimal values) 4 bytes sized.
-* double - holds larger decimal values (twice as large as float)
-* boolean - holds either true or false (boolean values)
-* char - holds only one character
-* string - holds a series of characters (text)
-An `=` symbol sets the value of the variable to the value specified on the right-hand side of the symbol. For example:
+## If statments
 
-```Java
-int y = 100 / 2; // y will equal 50 because math
-string name = "Alex"; // Double quotes for string
-char first = 'A'; // Single quotes for char
-boolean v = true; // can only be true or false
-long x = 2;
-long l = x * 2; //will equal 4 because x was set to 2
-float f = 3.55555f; // You must put the f in front of the number or the program will assume its a double (causing an error).
-double d = 4.9999999; // Double is the default floating type variable so it doesn't need a clarification lice decimal and float.
-
+An If statment is what is known as a conditional. It only runs if the condition that it is looking for is true. we can add an else statment after it to do do a task if the other condition is false.
 ```
-### Variable naming
-* Can contain uppercase and lowercase letters, numbers, and underscores.
-* CANNOT start with a number or contain spaces
-* Names are case sensitive.
-* Should start with a lowercase letter but is not mandatory.
-    * It is common practice to define variables with lowerCamelCaseNames meaning the first word is lower case and all proceeding words are upperCase
-    
-```Java
-string firstName = "Alex"; // is allowed
-string LastName = "Jones"; // is allowed but not a recommended naming standard
-string 1stName = "Barbra"; // this name is not allowed
-string iAmNumber1 = "Ann"; // this is allowed
+if(doorUnlocked == true){
+    openDoor();
+} else {
+    unlockDoor();
+}
 ```
 
-### Other Types
-* double - holds floating point values. 8 bytes sized
-* decimal - holds floating point values. 16 bytes sized. Optimal for financial and monetary calculations as it has higher precision.
-* byte - holds small integer values from 0 - 255.
-* sbyte - signed byte, holds integer values from -128 to 127.
-* unit - holds only positive integer values.
-* long - Same as an integer but is bigger.
-* ulong - unsigned long, same as long but only holds positive values.
-* short - holds small integer values from -32,768 to 32,767.
-* ushort - unsigned short, same as short but only holds positive numbers
+## Loops
+
+A loop is a type of conditional statment that does exactley what it sounds like. It repeats a block of code like song on repeat until the condition its looking for is false. to day we will use the Do loop.
+```
+int x = 0;
+do{
+x = x + 1;
+}while(x < 100);
+```
+This loop will reapete as long as x is less than 100. The unique thing about do loops is that unlike other conditionals the do loop will run ATLEAST once.
+
+## Methods/Function
+
+A method, also known as a function, is a block of code that preforms a task by combining differnt lins of code. Some methods will require the program to return a value. Others, like the main method at the top, will not return a value.
+
+```
+public boolean checkAge(int i){
+    boolean oldEnough = false;
+    if(i > 13){
+        oldEnough = true;
+    }
+    return oldEnough;
+}
+```
+The example code is going to check to see if the data passed to it```int i``` is old enough. If they are old enough it will change the value of the oldEnough boolean to true and return that value to the code that called it.
+
+To call this method you would need write this:
+```
+checkAge(19);
+```
+
+The data in the perenthises will be sent to the checkAge() method to see if it is true.
