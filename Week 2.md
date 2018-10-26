@@ -88,3 +88,46 @@ checkAge(19);
 ```
 
 The data in the perenthises will be sent to the checkAge() method to see if it is true.
+
+##Exercise
+Try creating a MadLib program with the what you have learend on this page. You can use Intellij or repl.it to create it. Below is an example
+```Java
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        System.out.print("Enter a exclamation: ");
+        String exclamation = checkForWord();
+
+        System.out.print("Enter a adverb: ");
+        String adverb = checkForWord();
+
+        System.out.print("Enter a noun: ");
+        String noun = checkForWord();
+
+        System.out.print("Enter a adjective: ");
+        String adjective = checkForWord();
+
+        // printf prints outs formatted strings but doesn't add a new line
+        System.out.printf("\"%s!\" he said %s as he jumped into his convertible %s and drove off with his %s wife.\n", exclamation, adverb, noun, adjective);
+        System.out.println("Thank you for playing!\n");
+    }
+
+    private static String checkForWord() {
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.nextLine();
+        boolean isInvalid;
+        do {
+            isInvalid = word == null || word.isEmpty();
+            if (isInvalid){
+                System.out.print("Please input a word: ");
+                word = scanner.nextLine();
+            }
+        }while (isInvalid);
+
+        return word;
+    }
+}
+```
